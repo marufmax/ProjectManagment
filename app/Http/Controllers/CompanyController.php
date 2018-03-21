@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\company;
+use App\Company;
 use Illuminate\Http\Request;
 
-class CompaniesController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,6 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        //
         $companies = Company::all();
 
         return view('companies.index',['companies'=> $companies]);
@@ -44,21 +43,23 @@ class CompaniesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\company  $company
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function show(company $company)
+    public function show(Company $company)
     {
-        //
+        $company = Company::find($company->id);
+
+        return view('companies.show',['companies'=>$company]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\company  $company
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit(company $company)
+    public function edit(Company $company)
     {
         //
     }
@@ -67,10 +68,10 @@ class CompaniesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\company  $company
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, company $company)
+    public function update(Request $request, Company $company)
     {
         //
     }
@@ -78,10 +79,10 @@ class CompaniesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\company  $company
+     * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(company $company)
+    public function destroy(Company $company)
     {
         //
     }
