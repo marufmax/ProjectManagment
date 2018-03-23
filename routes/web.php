@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('companies','CompaniesController');
+Route::resource('companies','CompanyController');
 Route::resource('projects','ProjectsController');
 Route::resource('roles','rolesController');
 Route::resource('tasks','TasksController');
