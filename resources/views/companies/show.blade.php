@@ -1,6 +1,4 @@
 @extends('layouts.dasboard')
-
-
 @section('content')
                 <h2 class="display-4">Hello {{ $company->name  }}</h2>
                 <p class="lead"> {{ $company->description  }}</p>

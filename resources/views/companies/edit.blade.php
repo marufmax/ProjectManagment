@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <label for="company-description">Description</label>
                     <textarea  class="form-control" id="company-description"
                               placeholder="Enter Description" name="description"
                               rows="5">{{ $company->description  }} </textarea>

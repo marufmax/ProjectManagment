@@ -1,10 +1,17 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-    <div class="mr-1" >
-        <a class="btn btn-info" href="{{ URL::previous() }}">back</a>
-        <a class="btn btn-info" href="/companies/{{ $company->id }}"> All Projects</a>
-    </div>
-    <div class="mr-1"> This company is managed by <a href="/user/{{$company->user->id}}">{{$company->user->name}}</a></div>
+        <div class="mr-1" >
+            @if(Request::route()->getName() != "companies.index" && Request::route()->getName() == "companies.create")
+            <a class="btn btn-info" href="{{ URL::previous() }}">back</a>
+            @else
+            <a class="btn btn-info" href="/companies/{{ $company->id }}"> All Projects</a>
+            <a class="btn btn-info" href="/companies"> All Company</a>
+
+        </div>
+
+        <div class="mr-1"> This company is managed by <a href="/user/{{$company->user->id}}">{{$company->user->name}}</a>    @endif</div>
+
     <div class="btn-toolbar mb-2 mb-md-0">
+        @if(Request::route()->getName() != "companies.create")
         <div class="btn-group mr-2">
             <a href="/companies/{{$company->id}}/edit" class="btn btn-outline-secondary">Edit</a>
             <a class="btn btn-outline-secondary" onclick="
@@ -18,8 +25,9 @@
                 <input type="hidden" name="_method" value="delete">
                 {{ csrf_field() }}
             </form>
-            <a class="btn btn-outline-secondary">Add New User</a>
+            <a href="{{route("companies.create")}}" class="btn btn-outline-primary">Create New Company</a>
         </div>
+        @endif
         <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             This week
