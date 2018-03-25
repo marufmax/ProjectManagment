@@ -24,13 +24,11 @@
             <form id="delete-form" action="{{ route('companies.destroy', [$company->id]) }}" method="POST" style="display: none;">
                 <input type="hidden" name="_method" value="delete">
                 {{ csrf_field() }}
-            </form>
+            </form> @elseif(Request::route()->getName() == "projects.create")
             <a href="{{route("companies.create")}}" class="btn btn-outline-primary">Create New Company</a>
+                        @else
+                <a href="{{route("projects.create")}}" class="btn btn-outline-primary">Create New Project</a>
+            @endif
         </div>
-        @endif
-        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-        </button>
     </div>
 </div>

@@ -22,32 +22,31 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{url('/')}}"> {{ config('app.name', 'Laravel') }} - Dashboard</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-        @guest
-        @else
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Project Managment Software</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav mr-auto my-2 my-md-0">
+
+        </ul>
+        <ul class="form-inline my-2 my-md-0 ">
+
             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                <a class="nav-link dropdown-toggle text-light" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name  }}</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
-            @endguest
-    </ul>
+            <li class="nav-item active">
+                <a class="nav-link text-light" href="#">Logout <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 <div class="container-fluid">

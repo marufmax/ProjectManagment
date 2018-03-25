@@ -6,10 +6,12 @@
                 <h3 class="mb-5"> Your Projects</h3>
                 <div class="row" style="background-color: white; margin: 10px;">
                     @foreach( $company->projects as $project)
-                    <div class="col-lg-4">
+                    <div class="border border-info col-lg-4 m-2">
+                        <div class="mt-3">
                         <h2>{{ $project->name }}</h2>
                         <p>{{$project->description  }}</p>
                         <p><a class="btn btn-primary" href="#" role="button">View details »</a></p>
+                        </div>
                     </div>
                     @endforeach<!-- /.col-lg-4 -->
                 </div>

@@ -105,7 +105,7 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        $findCompany = Company::find( $company->i);
+        $findCompany = Company::find( $company->id);
         if ($findCompany->delete()) {
             return redirect()->route('companies.index')->with('success','Company Deleted Successfully');
         }
