@@ -13,12 +13,19 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $companies = Company::all();
+            $companies = Company::where('user_id', Auth::user()->id)->get();
 
-        return view('companies.index',['companies'=> $companies]);
-    }
+            return view('companies.index', ['companies'=> $companies]);
+        }
+
+
 
     /**
      * Show the form for creating a new resource.

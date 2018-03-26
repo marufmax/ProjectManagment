@@ -29,8 +29,16 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
-        <ul class="navbar-nav mr-auto my-2 my-md-0">
-
+        <ul class="navbar-nav mr-auto my-2 my-md-0 justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">My Companies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Tasks</a>
+                </li>
         </ul>
         <ul class="form-inline my-2 my-md-0 ">
 
